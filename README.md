@@ -5,8 +5,10 @@ Avoid the red dots by tilting the Pi to move the green dot up and down.
 1 point for each red dot that passes across the screen, game speeds up every 5 points.
 Game over screen can be ended by clicking the joystick.
 
+Relies almost entirely on the 'RPi.SenseHat' project which can be found here: github.com/emmellsoft/RPi.SenseHat
 
-## RPi.SenseHat
+
+### RPi.SenseHat
 A complete Windows IoT class library for the Raspberry Pi "Sense HAT" (C#)
 
 The solution contains the following projects:
