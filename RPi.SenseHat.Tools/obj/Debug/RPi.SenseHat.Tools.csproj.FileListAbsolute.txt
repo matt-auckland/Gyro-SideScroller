@@ -1,0 +1,8 @@
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\bin\Debug\Font\BWFont.png
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\bin\Debug\Font\TinyBWFont.png
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\bin\Debug\Emmellsoft.IoT.Rpi.SenseHat.Tools.exe.config
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\bin\Debug\Emmellsoft.IoT.Rpi.SenseHat.Tools.exe
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\bin\Debug\Emmellsoft.IoT.Rpi.SenseHat.Tools.pdb
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\obj\Debug\RPi.SenseHat.Tools.csprojResolveAssemblyReference.cache
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\obj\Debug\Emmellsoft.IoT.Rpi.SenseHat.Tools.exe
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Tools\obj\Debug\Emmellsoft.IoT.Rpi.SenseHat.Tools.pdb

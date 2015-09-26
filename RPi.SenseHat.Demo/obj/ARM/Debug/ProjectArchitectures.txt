@@ -1,0 +1,4 @@
+H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Demo\RPi.SenseHat.Demo.csproj;arm
+H:\RPi.SenseHat\RPi.SenseHat\Rpi.SenseHat\Rpi.SenseHat.csproj;arm
+H:\RPi.SenseHat\RPi.SenseHat\RT.IoT.Sensors\RT.IoT.Sensors.csproj;arm
+H:\RPi.SenseHat\RPi.SenseHat\RT.IoT.Sensors\RT.IoT.Sensors.csproj;arm
