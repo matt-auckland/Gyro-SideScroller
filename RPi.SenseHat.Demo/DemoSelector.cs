@@ -30,22 +30,6 @@ namespace RPi.SenseHat.Demo
 	{
 		public static SenseHatDemo GetDemo(ISenseHat senseHat)
 		{
-			//return new DiscoLights(senseHat); // Click on the joystick to change drawing mode!
-
-			//return new JoystickPixel(senseHat); // Use the joystick to move the pixel around.
-
-			//return new WriteTemperature(senseHat); // Is it only me or does it show some unusual high temperature? :-S
-
-			//return new GravityBlob(senseHat); // The green blob is drawn to the center of the earth! If you hold it upside down it gets angry and turns red. :-O
-
-			//return new Compass(senseHat); // Note! You must calibrate the magnetic sensor by moving the Raspberry Pi device around in an 'eight' figure a few seconds at startup!
-
-			//return new BwScrollText(senseHat, "Hello World"); // Click on the joystick to change drawing mode!
-
-			//return new SpriteAnimation(senseHat); // Use the joystick to move Mario. The middle button switches orientation and flipping of the drawing.
-
-			//return new GammaTest(senseHat); // Tries out different gamma settings for the LED display. Use the joystick to play around.
-
             return new SideScroller(senseHat);
         }
 	}
