@@ -1,4 +1,4 @@
-H:\RPi.SenseHat\RPi.SenseHat\RPi.SenseHat.Demo\RPi.SenseHat.Demo.csproj;arm
-H:\RPi.SenseHat\RPi.SenseHat\Rpi.SenseHat\Rpi.SenseHat.csproj;arm
-H:\RPi.SenseHat\RPi.SenseHat\RT.IoT.Sensors\RT.IoT.Sensors.csproj;arm
-H:\RPi.SenseHat\RPi.SenseHat\RT.IoT.Sensors\RT.IoT.Sensors.csproj;arm
+C:\Users\Matt\Documents\GitHub\Gyro-SideScroller\RPi.SenseHat.Demo\RPi.SenseHat.Demo.csproj;arm
+C:\Users\Matt\Documents\GitHub\Gyro-SideScroller\Rpi.SenseHat\Rpi.SenseHat.csproj;arm
+C:\Users\Matt\Documents\GitHub\Gyro-SideScroller\RT.IoT.Sensors\RT.IoT.Sensors.csproj;arm
+C:\Users\Matt\Documents\GitHub\Gyro-SideScroller\RT.IoT.Sensors\RT.IoT.Sensors.csproj;arm

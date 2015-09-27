@@ -19,72 +19,84 @@ namespace RPi.SenseHat.Demo.Demos
             : base(senseHat)
         {
         }
-
         public static int SCORE = 0;
         public static int SPEED = 800;
+        public static int HIGH_SCORE = 0;
 
         public override void Run()
         {
+            while(true) // Loops a game
+            {
+                SCORE = 0;
+                SPEED = 800;
 
-            Player currentPlayer = new Player(0, 4);
-            Enemy[] enemies = new Enemy[6] { new Enemy(8, 3), new Enemy(12, 5),
+        Player currentPlayer = new Player(0, 4);
+                Enemy[] enemies = new Enemy[6] { new Enemy(8, 3), new Enemy(12, 5),
                 new Enemy(16, 7), new Enemy(20, 3), new Enemy(24, 6), new Enemy(28,  2) };
 
 
-            SenseHat.Display.Clear();
+                SenseHat.Display.Clear();
 
-            while (true)
-            {
-                Vector3 piTilt = new Vector3(0,0,0);
-
-                if (SenseHat.Sensors.ImuSensor.Update())
-                    if (SenseHat.Sensors.Acceleration.HasValue)
-                        piTilt = SenseHat.Sensors.Acceleration.Value;
-
-                SenseHat.Display.Clear(); // Clear the screen.
-
-                currentPlayer.updatePosition(piTilt); // Move the pixel.
-
-                SenseHat.Display.Screen[currentPlayer.x, currentPlayer.y] = Colors.Green; // Draw the player.
-
-                foreach (Enemy badGuy in enemies) //Loop through enemies and draw
+                while (true) //Loops a tick
                 {
-                    badGuy.move();
-                    if (badGuy.x > 7)                   
-                        continue;
-                    
-                    SenseHat.Display.Screen[badGuy.x, badGuy.y] = Colors.Red;
-                }
+                    Vector3 piTilt = new Vector3(0, 0, 0);
 
-                SenseHat.Display.Update(); // Update the physical display.
+                    if (SenseHat.Sensors.ImuSensor.Update())
+                        if (SenseHat.Sensors.Acceleration.HasValue)
+                            piTilt = SenseHat.Sensors.Acceleration.Value;
 
-                Sleep(TimeSpan.FromMilliseconds(SPEED)); // Take a short nap.
+                    SenseHat.Display.Clear(); // Clear the screen.
 
-                if (currentPlayer.isDead(enemies))
-                {
-                    SenseHat.Display.Clear();
-                    SenseHat.Display.Update(); // Update the physical display.
-                    Sleep(TimeSpan.FromMilliseconds(300));
+                    currentPlayer.updatePosition(piTilt); // Move the pixel.
 
-                    for (int i = 4; i > 0; i--)
+                    SenseHat.Display.Screen[currentPlayer.x, currentPlayer.y] = Colors.Green; // Draw the player.
+
+                    foreach (Enemy badGuy in enemies) //Loop through enemies and draw
                     {
-                        SenseHat.Display.Screen[currentPlayer.x, currentPlayer.y] = Colors.Green; // Draw the player.
-                        SenseHat.Display.Update(); // Update the physical display.
-                        Sleep(TimeSpan.FromMilliseconds(300));
+                        badGuy.move();
+                        if (badGuy.x > 7)
+                            continue;
 
-                        SenseHat.Display.Screen[currentPlayer.x, currentPlayer.y] = Colors.Red; // Draw the player.
-                        SenseHat.Display.Update(); // Update the physical display.
-                        Sleep(TimeSpan.FromMilliseconds(300));
+                        SenseHat.Display.Screen[badGuy.x, badGuy.y] = Colors.Red;
                     }
 
-                    break;
-                }
-            }
+                    SenseHat.Display.Update(); // Update the physical display.
 
-            String scoreString = "Game Over! Score: " + SCORE;
-            BwScrollText textScroller = new BwScrollText(SenseHat, scoreString);
-            textScroller.Run();
-            
+                    Sleep(TimeSpan.FromMilliseconds(SPEED)); // Take a short nap.
+
+                    if (currentPlayer.isDead(enemies))
+                    {
+                        SenseHat.Display.Clear();
+                        SenseHat.Display.Update(); // Update the physical display.
+                        Sleep(TimeSpan.FromMilliseconds(300));
+
+                        for (int i = 4; i > 0; i--)
+                        {
+                            SenseHat.Display.Screen[currentPlayer.x, currentPlayer.y] = Colors.Green; // Draw the player.
+                            SenseHat.Display.Update(); // Update the physical display.
+                            Sleep(TimeSpan.FromMilliseconds(300));
+
+                            SenseHat.Display.Screen[currentPlayer.x, currentPlayer.y] = Colors.Red; // Draw the player.
+                            SenseHat.Display.Update(); // Update the physical display.
+                            Sleep(TimeSpan.FromMilliseconds(300));
+                        }
+
+                        
+                        break;
+                    }
+                }
+
+                String scoreString = "Game Over! Score: " + SCORE + "!";
+                if (SCORE > HIGH_SCORE)
+                {
+                    HIGH_SCORE = SCORE;
+                    scoreString += " New High Score !!!";
+                }
+                BwScrollText textScroller = new BwScrollText(SenseHat, scoreString);
+                textScroller.Run();
+                SenseHat.Display.Clear();
+                SenseHat.Display.Update();
+            }
         }
 
 
@@ -130,7 +142,7 @@ namespace RPi.SenseHat.Demo.Demos
             public int x { get; set; }
             public int y { get; set; }
 
-            private Random random = new Random();
+            private static Random random = new Random();
 
             public Enemy(int x, int y)
             {
