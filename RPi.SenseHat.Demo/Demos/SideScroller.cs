@@ -30,7 +30,7 @@ namespace RPi.SenseHat.Demo.Demos
                 SCORE = 0;
                 SPEED = 800;
 
-        Player currentPlayer = new Player(0, 4);
+Player currentPlayer = new Player(0, 4);
                 Enemy[] enemies = new Enemy[6] { new Enemy(8, 3), new Enemy(12, 5),
                 new Enemy(16, 7), new Enemy(20, 3), new Enemy(24, 6), new Enemy(28,  2) };
 
@@ -83,6 +83,19 @@ namespace RPi.SenseHat.Demo.Demos
 
                         
                         break;
+                    }
+                    if (SenseHat.Joystick.Update() && (SenseHat.Joystick.EnterKey == KeyState.Pressing))
+                    {
+                        // The middle button is just pressed.
+                        while (true)
+                        {
+                            if (SenseHat.Joystick.Update() && (SenseHat.Joystick.EnterKey == KeyState.Pressing))
+                            {
+                                // The middle button is just pressed.
+                                break;
+                            }
+                        }
+
                     }
                 }
 
