@@ -7,8 +7,8 @@
     <ProjectGuid>{1C726769-00B2-4BCC-95DF-1398D1D20AAC}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPi.SenseHat.Demo</RootNamespace>
-    <AssemblyName>RPi.SenseHat.Demo</AssemblyName>
+    <RootNamespace>Gyro.SideScroller</RootNamespace>
+    <AssemblyName>Gyro-SideScroller</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
